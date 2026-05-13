@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+
+    container_name: hoi_an_postgres
+
+    restart: always
+
+    ports:
+      - '5060:5432'
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: '05032002'
+      POSTGRES_DB: hoi_an_restaurant
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
