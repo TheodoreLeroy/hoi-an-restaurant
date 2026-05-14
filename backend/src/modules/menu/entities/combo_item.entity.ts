@@ -1,6 +1,6 @@
 import { Entity, JoinColumn, ManyToOne, Unique } from 'typeorm';
 import { BaseEntity } from '../../base_entity.entity';
-import { ComboEntity } from '../../combo/entities/combo.entity';
+import { ComboEntity } from './combo.entity';
 import { MenuItemEntity } from './menu_item.entity';
 
 @Entity('combo_item')

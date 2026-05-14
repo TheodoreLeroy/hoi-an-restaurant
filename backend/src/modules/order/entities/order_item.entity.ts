@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { MenuItemEntity } from './menu_item.entity';
+import { MenuItemEntity } from 'src/modules/menu/entities/menu_item.entity';
 import { BaseEntity } from '../../../modules/base_entity.entity';
 import { OrderEntity } from 'src/modules/order/entities/order.entity';
 

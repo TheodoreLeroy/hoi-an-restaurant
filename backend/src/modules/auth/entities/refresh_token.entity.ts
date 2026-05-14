@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from 'src/modules/base_entity.entity';
-import { AdminEntity } from '../../admin/entities/admin_user.entity';
+import { AdminEntity } from './admin_user.entity';
 
 @Entity('refresh_token')
 export class RefreshTokenEntity extends BaseEntity {

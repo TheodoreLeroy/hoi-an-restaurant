@@ -1,6 +1,12 @@
-import { Column, Entity, OneToMany } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  UpdateDateColumn,
+} from 'typeorm';
 import { BaseEntity } from 'src/modules/base_entity.entity';
-import { OrderItem } from './order_item.entity';
+import { OrderItem } from '../../order/entities/order_item.entity';
 import { MenuCategoryEntity } from './menu_category.entity';
 import { ItemTagEntity } from './item_tag.entity';
 import { ComboItemEntity } from './combo_item.entity';
@@ -27,6 +33,18 @@ export class MenuItemEntity extends BaseEntity {
 
   @Column({ nullable: true, default: null })
   discount: number;
+
+  @Column({ default: false })
+  isAvailable: boolean;
+
+  @Column({ default: false })
+  isPublished: boolean;
+
+  @CreateDateColumn({ type: 'timestamp' })
+  createdAt: Date;
+
+  @UpdateDateColumn({ type: 'timestamp' })
+  updatedAt: Date;
 
   // 1-n category
   @OneToMany((type) => MenuCategoryEntity, (ctgr) => ctgr.itemId)
